@@ -1,0 +1,14 @@
+builds:
+  - main: .
+    ldflags:
+      - -s -w
+    flags:
+      - -trimpath
+    binary: '{{ .ProjectName }}'
+    goos:
+      - darwin
+      - linux
+      - windows
+    goarch:
+      - amd64
+      - arm64
