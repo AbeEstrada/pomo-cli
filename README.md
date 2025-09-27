@@ -1,3 +1,5 @@
+<img src="https://github.com/user-attachments/assets/69cb9b4a-ee8b-4c80-9c4d-4b7276c27883" width="512" height="512" alt="Golang Gopher holding a tomato" />
+
 # Pomo: a simple cli timer
 
 A minimal, command line stopwatch/timer written in Go. This tool is useful for quick, focused time tracking like [Pomodoro technique](https://en.wikipedia.org/wiki/Pomodoro_Technique) sessions directly in your terminal.
