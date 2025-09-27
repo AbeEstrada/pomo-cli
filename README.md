@@ -1,4 +1,4 @@
-<img src="https://github.com/user-attachments/assets/69cb9b4a-ee8b-4c80-9c4d-4b7276c27883" width="512" height="512" alt="Golang Gopher holding a tomato" />
+<p align="center"><img src="https://github.com/user-attachments/assets/bbe9dce2-a758-44f2-b4a8-19771f2398c5" width="256" height="256" alt="Golang Gopher holding a tomato" /></p>
 
 # Pomo: a simple cli timer
 
