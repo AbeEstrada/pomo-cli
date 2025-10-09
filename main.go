@@ -8,6 +8,20 @@ import (
 	"time"
 )
 
+func formatSeconds(seconds int) string {
+	duration := time.Duration(seconds) * time.Second
+
+	hours := int(duration.Hours())
+	minutes := int(duration.Minutes()) % 60
+	secs := int(duration.Seconds()) % 60
+
+	if hours > 0 {
+		return fmt.Sprintf("%02d:%02d:%02d", hours, minutes, secs)
+	} else {
+		return fmt.Sprintf("%02d:%02d", minutes, secs)
+	}
+}
+
 func main() {
 	if len(os.Args) < 2 {
 		fmt.Println("Usage:   pomo <duration>(s|m|h)")
@@ -32,17 +46,19 @@ func main() {
 	defer ticker.Stop()
 
 	total := int(duration.Seconds())
-	seconds := 0
+	elapsed := 0
 
 	for {
 		select {
 		case <-ticker.C:
-			seconds++
+			elapsed++
 
-			fmt.Printf("\r⏱️ %d / %d seconds", seconds, total)
-			fmt.Printf("\x1b]0;%d\x07", seconds) // title
+			elapsedFormatted := formatSeconds(elapsed)
+			totalFormatted := formatSeconds(total)
+			fmt.Printf("\r⏱️ %s / %s", elapsedFormatted, totalFormatted)
+			fmt.Printf("\x1b]0;%s\x07", elapsedFormatted) // title
 
-			if seconds >= total {
+			if elapsed >= total {
 				fmt.Printf("\a\n") // notification
 				return
 			}
