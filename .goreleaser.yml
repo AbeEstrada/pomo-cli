@@ -5,7 +5,7 @@ builds:
       - -s -w
     flags:
       - -trimpath
-    binary: '{{ .ProjectName }}'
+    binary: 'pomo'
     goos:
       - darwin
       - linux
